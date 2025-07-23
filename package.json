@@ -6,7 +6,8 @@
     "build": "tsc",
     "vercel:dev": "vercel dev",
     "vercel:deploy": "vercel",
-    "drizzle": "drizzle-kit"
+    "drizzle": "drizzle-kit",
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "@hono/node-server": "^1.16.0",

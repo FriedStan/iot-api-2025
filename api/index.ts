@@ -20,11 +20,19 @@ app.use(
 
 app.route("/v1", apiRouter);
 
+serve({
+  fetch: app.fetch,
+  port: 3000,
+  hostname: "0.0.0.0", // Required for public access
+});
+
+console.log("Server running at http://0.0.0.0:3000/api/v1");
+
 // serve(app);
 // console.log("Start @ http://localhost:3000/api/v1")
 
-export const config = {
-  runtime: "edge",
-};
+// export const config = {
+//   runtime: "edge",
+// };
 
-export default handle(app);
+// export default handle(app);
