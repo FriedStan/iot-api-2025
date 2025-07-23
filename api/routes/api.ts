@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import studentsRouter from "./students";
+import studentsRouter from "./students.js";
 import { bearerAuth } from "hono/bearer-auth";
 import { env } from "hono/adapter";
 
