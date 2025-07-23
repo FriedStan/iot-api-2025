@@ -2,7 +2,10 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import apiRouter from "./routes/api.js";
 import { serve } from '@hono/node-server';
+import * as dotenv from 'dotenv'; // Import dotenv
 import { handle } from "hono/vercel";
+
+dotenv.config();
 
 const app = new Hono().basePath("/api");
 
@@ -17,11 +20,11 @@ app.use(
 
 app.route("/v1", apiRouter);
 
-serve(app);
-console.log("Start @ http://localhost:3000/api/v1")
+// serve(app);
+// console.log("Start @ http://localhost:3000/api/v1")
 
-// export const config = {
-//   runtime: "edge",
-// };
+export const config = {
+  runtime: "edge",
+};
 
-// export default handle(app);
+export default handle(app);
